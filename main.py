@@ -14,7 +14,6 @@ transform = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
-
 if __name__ == '__main__':
     # 创建Dataset实例
     dataset = SimpleImageFolderDataset(root_dir, transform=transform)
@@ -22,7 +21,7 @@ if __name__ == '__main__':
 
     # 创建DataLoader实例
     data_loader1 = DataLoader(dataset, batch_size=16, shuffle=True, num_workers=4)
-    data_loader2 = DataLoader(dataset, batch_size=8, shuffle=False, num_workers=4)
+    data_loader2 = DataLoader(dataset2, batch_size=8, shuffle=False, num_workers=4)
 
     device = torch.device("cuda:0")
     print("load the model...")

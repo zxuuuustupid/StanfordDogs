@@ -37,6 +37,7 @@ if __name__ == '__main__':
         model.train()
 
         for images, label in data_loader1:
+
             img = images.to(device)
             label = label.to(device)
             out = model(img)
@@ -56,6 +57,7 @@ if __name__ == '__main__':
         test_acc = 0
         model.eval()
         for images2, label2 in data_loader2:
+
             img = images2.to(device)
             label = label2.to(device)
             out = model(img)

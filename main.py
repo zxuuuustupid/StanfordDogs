@@ -1,11 +1,14 @@
 import torch
+import matplotlib.pyplot as plt
 from torch import nn, optim
+from triplet_loss import TripletLoss
 from torch.utils.data import DataLoader
 from torchvision.transforms import transforms
 
 from stanford.CNN import CNN
 from stanford.VGG import VGG
 from stanford.dataset import SimpleImageFolderDataset
+from draw import process_show
 
 root_dir = './Images/train'
 root_dir2 = './Images/test'
@@ -28,11 +31,15 @@ if __name__ == '__main__':
     print("load the model...")
     # model = CNN().to(device)
     model = VGG().to(device)
+    # criterion = TripletLoss()
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9, nesterov=True, weight_decay=5e-4)
 
+    loss_list=[]
+    train_acclist=[]
+    test_acclist=[]
     # 现在你可以在训练循环中使用data_loader了
-    for epoch in range(101):
+    for epoch in range(1,21):
         train_loss = 0
         train_acc = 0
         model.train()
@@ -67,5 +74,11 @@ if __name__ == '__main__':
             acc = num_correct / img.shape[0]
             test_acc += acc
 
-        print("Epoch:", epoch, "\nloss:", train_loss, "train acc:", train_acc / len(data_loader1), "test acc:",
-              test_acc / len(data_loader2), "\n")
+        train_acclist.append(train_acc / len(data_loader1))
+        test_acclist.append(test_acc / len(data_loader2))
+        loss_list.append(train_loss)
+
+        print("Epoch:", epoch, "loss:{:.4f}  train acc:{:.4f}  test acc:{:.4f}".format(train_loss
+              , train_acc / len(data_loader1), test_acc / len(data_loader2)))
+
+    process_show("VGG", list(range(1, 21)),loss_list,train_acclist, test_acclist)

@@ -23,5 +23,5 @@ def process_show(strm,epoch_list, loss_list, train_acclist, test_acclist):
     # 显示图形
     plt.tight_layout()
     plt.subplots_adjust(top=0.88)
-    plt.savefig(strm+'_plot.png')
+    plt.savefig('./results/'+strm+'_plot.png')
     plt.show()

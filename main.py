@@ -7,14 +7,14 @@ from torchvision.transforms import transforms
 
 from stanford.models.CNN import CNN
 from stanford.models.VGG import VGG
-from stanford.models.ResNet import ResNet18
+from stanford.models.ResNet import ResNet18, ResNet50
 from stanford.dataset import SimpleImageFolderDataset
 from draw import process_show
 
 root_dir = './Images/train'
 root_dir2 = './Images/test'
 model_name = 'VGG'
-epoch_num = 50
+epoch_num = 100
 # 定义变换操作
 transform = transforms.Compose([
     transforms.Resize((256, 256)),
@@ -41,11 +41,11 @@ if __name__ == '__main__':
     print("load the model...")
     # model = CNN().to(device)
     # model = ResNet18().to(device)
-    model=VGG().to(device)
+    model = VGG().to(device)
     # criterion = TripletLoss()
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=0.001, betas=(0.9,0.999), weight_decay=5e-4)
+    optimizer = optim.Adam(model.parameters(), lr=0.01, betas=(0.9, 0.999), weight_decay=5e-4)
     # optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9, nesterov=True, weight_decay=5e-4)
     loss_list = []
     train_acclist = []
@@ -55,7 +55,7 @@ if __name__ == '__main__':
         train_loss = 0
         train_acc = 0
         model.train()
-        if epoch%10 == 0:
+        if epoch == 30 or epoch == 50 or epoch==10 or epoch==70:
             optimizer.param_groups[0]['lr'] *= 0.1
 
         for images, label in data_loader1:
@@ -63,7 +63,6 @@ if __name__ == '__main__':
             label = label.to(device)
             out = model(img)
             loss = criterion(out, label)
-            
 
             optimizer.zero_grad()
             loss.backward()

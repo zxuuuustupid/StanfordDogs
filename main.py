@@ -4,7 +4,7 @@ from torch import nn, optim
 from triplet_loss import TripletLoss
 from torch.utils.data import DataLoader
 from torchvision.transforms import transforms
-
+from torchvision import models
 from stanford.models.CNN import CNN
 from stanford.models.VGG import VGG
 from stanford.models.ResNet import ResNet18, ResNet50
@@ -13,7 +13,7 @@ from draw import process_show
 
 root_dir = './Images/train'
 root_dir2 = './Images/test'
-model_name = 'VGG'
+model_name = 'Pretrained resnet'
 epoch_num = 100
 # 定义变换操作
 transform = transforms.Compose([
@@ -41,7 +41,8 @@ if __name__ == '__main__':
     print("load the model...")
     # model = CNN().to(device)
     # model = ResNet18().to(device)
-    model = VGG().to(device)
+    # model = VGG().to(device)
+    model=models.resnet18().to(device)
     # criterion = TripletLoss()
 
     criterion = nn.CrossEntropyLoss()
@@ -55,6 +56,13 @@ if __name__ == '__main__':
         train_loss = 0
         train_acc = 0
         model.train()
+        only_train_fc = True
+        if only_train_fc:
+            for param in model.parameters():
+                param.requires_grad_(False)
+        fc_in_features = model.fc.in_features
+        model.fc = torch.nn.Linear(fc_in_features, 10, bias=True).to(device)
+
         if epoch == 30 or epoch == 50 or epoch==10 or epoch==70:
             optimizer.param_groups[0]['lr'] *= 0.1
 

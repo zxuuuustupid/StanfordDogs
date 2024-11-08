@@ -46,7 +46,7 @@ if __name__ == '__main__':
     # criterion = TripletLoss()
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=0.01, betas=(0.9, 0.999), weight_decay=5e-4)
+    optimizer = optim.Adam(model.parameters(), lr=0.001, betas=(0.9, 0.999), weight_decay=5e-4)
     # optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9, nesterov=True, weight_decay=5e-4)
     loss_list = []
     train_acclist = []
@@ -63,8 +63,8 @@ if __name__ == '__main__':
         fc_in_features = model.fc.in_features
         model.fc = torch.nn.Linear(fc_in_features, 10, bias=True).to(device)
 
-        if epoch == 30 or epoch == 50 or epoch==10 or epoch==70:
-            optimizer.param_groups[0]['lr'] *= 0.1
+        # if epoch == 30 or epoch == 50 or epoch==10 or epoch==70:
+        #     optimizer.param_groups[0]['lr'] *= 0.1
 
         for images, label in data_loader1:
             img = images.to(device)

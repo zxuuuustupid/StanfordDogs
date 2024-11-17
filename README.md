@@ -9,7 +9,7 @@ Here are some pictures of cute dogs to be category:
 <table>
   <tr>
     <td align="center">
-      <img src="Images/test/n02085620-Chihuahua/n02085620_10976.jpg" alt="Chihuahua" width=250"><br>
+      <img src="Images/test/n02085620-Chihuahua/n02085620_3208.jpg" alt="Chihuahua" width=250"><br>
       <p><b>Chihuahua</b></p>
     </td>
     <td align="center">
@@ -21,7 +21,8 @@ Here are some pictures of cute dogs to be category:
       <p><b>Papillon</b></p>
     </td>
   </tr>
-</table>
+</table>    
+
 ## Exploration and Results   
 ### Overfitting   
 I tried some simple model at first. See them at: [models](models)     

@@ -1,11 +1,11 @@
 # StanfordDogs
-#### "It's just a simple practice."   
+#### **"It's just a simple practice."**   
 After several months, I have forget something about deep learning and cant even write code.    
 I will finish and polish it slowly.    
 **(Now this project ends wonderfully in Nov.17th 2024, final core code is: [main.py](main.py) )**   
 ## Dataset    
 The Stanford Dogs dataset contains images of 120 breeds of dogs from around the world. This dataset has been built using images and annotation from ImageNet for the task of fine-grained image categorization.  
-I choose 10 categories to reduce train difficulty.       
+**I choose 10 categories to reduce train difficulty.**       
 Download dataset at: http://vision.stanford.edu/aditya86/ImageNetDogs/     
 Here are some pictures of cute dogs to be category:   
 <table>

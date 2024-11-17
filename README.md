@@ -41,7 +41,25 @@ I tried resnet18: [resnet18](models/ResNet.py).
 ## Transfer Learning and results   
 Transfer learning may be more effective for small sample scenarios.    
 I used the trained resnet18 model for fine-tuning, and the results were obvious: [results](results)       
-Accuracy on test and train set both reach 93% !    
+Accuracy on test and train set both reach 93% !     
+Finally I visualized loss and accuracy in training process of different method:    
+<table>
+  <tr>
+    <td align="center">
+      <img src="results/Pretrained resnet_plot.png" alt="Pretrained resnet18" width=250"><br>
+      <p><b>Pretrained resnet18</b></p>
+    </td>
+    <td align="center">
+      <img src="results/ResNet18_plot.png" alt="ResNet18" width="250"><br>
+      <p><b>ResNet18</b></p>
+    </td>   
+    <td align="center">
+      <img src="results/VGG_plot.png" alt="VGG" width="250"><br>
+      <p><b>VGG</b></p>
+    </td>
+  </tr>
+</table>     
+
 ### Inspirations   
 After the practice, something useful I have learnt will be shared here   
 ## Transfer Learning   

@@ -11,23 +11,15 @@ Here are some pictures of cute dogs to be category:
 <table>
   <tr>
     <td align="center">
-      <img src="Images/test/n02085620-Chihuahua/n02085620_3208.jpg" alt="Chihuahua" width=800"><br>
+      <img src="Images/test/n02085620-Chihuahua/n02085620_3208.jpg" alt="Chihuahua" width=250"><br>
       <p><b>Chihuahua</b></p>
     </td>
-  </tr>
-</table>    
-<table>
-  <tr>
     <td align="center">
-      <img src="Images/test/n02086079-Pekinese/n02086079_10603.jpg" alt="Pekinese" width="800"><br>
+      <img src="Images/test/n02086079-Pekinese/n02086079_10603.jpg" alt="Pekinese" width="250"><br>
       <p><b>Pekinese</b></p>
-    </td>   
-  </tr>
-</table>
-<table>
-  <tr>    
+    </td>    
     <td align="center">
-      <img src="Images/test/n02086910-papillon/n02086910_10147.jpg" alt="Papillon" width="800"><br>
+      <img src="Images/test/n02086910-papillon/n02086910_10147.jpg" alt="Papillon" width="250"><br>
       <p><b>Papillon</b></p>
     </td>
   </tr>
@@ -54,15 +46,23 @@ Finally I visualized loss and accuracy in training process of different method:
 <table>
   <tr>
     <td align="center">
-      <img src="results/Pretrained resnet_plot.png" alt="Pretrained resnet18" width=250"><br>
+      <img src="results/Pretrained resnet_plot.png" alt="Pretrained resnet18" width=800"><br>
       <p><b>Pretrained resnet18</b></p>
     </td>
+  </tr>
+</table>
+<table>
+  <tr>   
     <td align="center">
-      <img src="results/ResNet18_plot.png" alt="ResNet18" width="250"><br>
+      <img src="results/ResNet18_plot.png" alt="ResNet18" width="800"><br>
       <p><b>ResNet18</b></p>
     </td>   
+  </tr>
+</table>
+<table>
+  <tr>   
     <td align="center">
-      <img src="results/VGG_plot.png" alt="VGG" width="250"><br>
+      <img src="results/VGG_plot.png" alt="VGG" width="800"><br>
       <p><b>VGG</b></p>
     </td>
   </tr>

@@ -11,15 +11,23 @@ Here are some pictures of cute dogs to be category:
 <table>
   <tr>
     <td align="center">
-      <img src="Images/test/n02085620-Chihuahua/n02085620_3208.jpg" alt="Chihuahua" width=250"><br>
+      <img src="Images/test/n02085620-Chihuahua/n02085620_3208.jpg" alt="Chihuahua" width=800"><br>
       <p><b>Chihuahua</b></p>
     </td>
+  </tr>
+</table>    
+<table>
+  <tr>
     <td align="center">
-      <img src="Images/test/n02086079-Pekinese/n02086079_10603.jpg" alt="Pekinese" width="250"><br>
+      <img src="Images/test/n02086079-Pekinese/n02086079_10603.jpg" alt="Pekinese" width="800"><br>
       <p><b>Pekinese</b></p>
     </td>   
+  </tr>
+</table>
+<table>
+  <tr>    
     <td align="center">
-      <img src="Images/test/n02086910-papillon/n02086910_10147.jpg" alt="Papillon" width="250"><br>
+      <img src="Images/test/n02086910-papillon/n02086910_10147.jpg" alt="Papillon" width="800"><br>
       <p><b>Papillon</b></p>
     </td>
   </tr>

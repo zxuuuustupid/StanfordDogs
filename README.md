@@ -6,8 +6,8 @@ I will finish and polish it slowly.
 **(Now this project ends wonderfully in Nov.17th 2024, final core code is: [main.py](main.py) )**   
 ## Dataset    
 The Stanford Dogs dataset contains images of 120 breeds of dogs from around the world. This dataset has been built using images and annotation from ImageNet for the task of fine-grained image categorization.  
-**I choose 10 categories to reduce train difficulty.**       
-
+(before：**I choose 10 categories to reduce train difficulty.**）       
+after: **contains all 120 categories**   
 Download dataset at: http://vision.stanford.edu/aditya86/ImageNetDogs/     
 Here are some pictures of cute dogs to be category:   
 <table>
@@ -45,7 +45,7 @@ Transfer learning may be more effective for small sample scenarios.
 I used the trained resnet18 model for fine-tuning, and the results were obvious: [results](results)       
 Accuracy on test and train set both reach 93% !     
 
-Finally I visualized loss and accuracy in training process of different method:    
+Finally I visualized loss and accuracy in training process of different method (10 categories):    
 <table>
   <tr>
     <td align="center">
@@ -69,7 +69,10 @@ Finally I visualized loss and accuracy in training process of different method:
       <p><b>VGG</b></p>
     </td>
   </tr>
-</table>     
+</table>      
+
+120 categories of pretrained resnet:   
+
 
 ### Inspirations   
 After the practice, something useful I have learnt will be shared here   

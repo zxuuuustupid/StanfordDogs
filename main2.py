@@ -11,9 +11,9 @@ from models.ResNet import ResNet18, ResNet50
 from dataset import SimpleImageFolderDataset
 from draw import process_show
 
-root_dir = './Images/train'
-root_dir2 = './Images/test'
-model_name = 'Pretrained resnet'
+root_dir = './Images2/train'
+root_dir2 = './Images2/test'
+model_name = 'Pretrained resnet 120'
 epoch_num = 20
 
 # 定义变换操作
@@ -50,7 +50,7 @@ if __name__ == '__main__':
 
     # 替换全连接层
     fc_in_features = model.fc.in_features
-    model.fc = nn.Linear(fc_in_features, 10, bias=True).to(device)  # 10类（斯坦福狗数据集）
+    model.fc = nn.Linear(fc_in_features, 120, bias=True).to(device)  # 10类（斯坦福狗数据集）
 
     optimizer = optim.SGD(model.fc.parameters(), lr=0.001, momentum=0.9, nesterov=True, weight_decay=5e-4)
 
@@ -156,4 +156,4 @@ if __name__ == '__main__':
             train_loss, train_acc / len(data_loader1), test_acc / len(data_loader2)))
 
     # 绘制训练过程中的损失和准确率曲线
-    process_show(model_name, list(range(1, epoch_num + 1)), loss_list, train_acclist, test_acclist)
+    process_show(model_name, list(range(1, epoch_num + 21)), loss_list, train_acclist, test_acclist)

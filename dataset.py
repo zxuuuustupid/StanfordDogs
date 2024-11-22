@@ -4,6 +4,7 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 from PIL import Image
 
+
 class SimpleImageFolderDataset(Dataset):
     def __init__(self, root_dir, transform=None):
         """
@@ -15,14 +16,14 @@ class SimpleImageFolderDataset(Dataset):
         self.transform = transform
         self.image_paths = []
         self.labels = []
-        label_code=0
+        label_code = 0
         # 遍历每个类别的文件夹
         for folder_name in os.listdir(root_dir):
             folder_path = os.path.join(root_dir, folder_name)
             for image_name in os.listdir(folder_path):
                 self.image_paths.append(os.path.join(folder_path, image_name))
                 self.labels.append(label_code)  # 假设文件夹名即为标签
-            label_code=label_code+1
+            label_code = label_code + 1
 
     def __len__(self):
         """
@@ -35,11 +36,8 @@ class SimpleImageFolderDataset(Dataset):
         根据给定的索引返回一个样本
         """
         image_path = self.image_paths[index]
-        image = Image.open(image_path)
+        image = Image.open(image_path).convert("RGB")
         image = self.transform(image)
         label = self.labels[index]
 
         return image, label
-
-
-

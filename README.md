@@ -77,7 +77,7 @@ Finally I visualized loss and accuracy in training process of different method (
   <tr>   
     <td align="center">
       <img src="results/Pretrained resnet 120_plot.png" alt="Pretrained resnet 120" width="800"><br>
-      <p><b>VGG</b></p>
+      <p><b>Pretrained resnet 120</b></p>
     </td>
   </tr>
 </table>     

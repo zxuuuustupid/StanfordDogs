@@ -71,8 +71,16 @@ Finally I visualized loss and accuracy in training process of different method (
   </tr>
 </table>      
 
-120 categories of pretrained resnet:   
+120 categories of pretrained resnet:    
 
+<table>
+  <tr>   
+    <td align="center">
+      <img src="results/Pretrained resnet 120_plot.png" alt="Pretrained resnet 120" width="800"><br>
+      <p><b>VGG</b></p>
+    </td>
+  </tr>
+</table>     
 
 ### Inspirations   
 After the practice, something useful I have learnt will be shared here   
